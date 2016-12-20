@@ -5,7 +5,7 @@ from PIL import Image
 
 1. # 类的使用 #
 class Student(object):
-    def __init__(self, name, age):     # __init__()必须有
+    def __init__(self, name, age):     
         self.__name=name
         self.age=age
 
@@ -14,3 +14,18 @@ class Student(object):
 
 james = Student("james", 15)
 mike = Student("mike", 20)
+
+2. # @property的使用 #
+class Screen(object):
+
+    @property
+    def width(self):
+        print self._width
+
+    @width.setter
+    def width(self,value):
+        self._width=value
+
+s = Screen()
+s.width=100
+s.width          # 输出100
