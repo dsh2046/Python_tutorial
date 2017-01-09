@@ -29,3 +29,14 @@ class Screen(object):
 s = Screen()
 s.width=100
 s.width          # 输出100
+
+3. # 运用模组 从网上下载图片到本地
+import random
+import urllib.request
+
+def dlweb(url):
+    name = random.randrange(1, 1000)
+    full_name = str(name) + '.jpg'
+    urllib.request.urlretrieve(url, full_name)
+
+dlweb('http://xxxxxxx')
