@@ -69,3 +69,17 @@ def dl(csv_url):
     fx.close()
 
 dl(url)
+
+6. #线程
+import threading
+
+
+class abc(threading.Thread):
+    def run(self):
+        for _ in range(10):
+            print(threading.currentThread().getName())
+
+th1 = abc(name='this is 1')               #结果：th1，th2随机进行
+th2 = abc(name='this is 2')
+th1.start()
+th2.start()                           
