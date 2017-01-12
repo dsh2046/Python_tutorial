@@ -123,3 +123,38 @@ def create_dict(clean_word_list):
         print(k, v)
 
 start('https://ca.yahoo.com/')
+
+8. #打包tuple
+def cal(grade):
+    *first, middle, last = grade
+    avg = sum(first) / len(first)
+    print(avg)
+
+cal([2, 4, 6, 8])   #  取前两个数并计算平均值
+
+9. #字典排序， 按照股票价值大小排序
+import operator
+stock = {
+    'Goog': 502,
+    'Appl': 324,
+    'Yahoo': 34,
+    'Micro': 130
+}
+
+print(sorted(zip(stock.values(), stock.keys()), key=operator.itemgetter(0), reverse=False))   #zip()把keys和values互换位置
+
+10. # heapq， 获取数组的最小最大值
+import heapq
+
+grades = [23, 44, 65, 222, 334, 41]
+print(heapq.nlargest(3, grades))           #输出最大的三个数，即65，222，334
+
+stocks = [
+    {'Name': 'AApl', 'Price': '200'},
+    {'Name': 'Micro', 'Price': '43'},
+    {'Name': 'Tuna', 'Price': '566'},
+    {'Name': 'Goog', 'Price': '87'},
+    {'Name': 'Amzon', 'Price': '123'},
+    {'Name': 'SSSSS', 'Price': '90'}
+]
+print(heapq.nsmallest(2, stocks, key=lambda a: a['Price']))  #多属性时使用key=lambda， 获取具体指定属性的最小最大值
