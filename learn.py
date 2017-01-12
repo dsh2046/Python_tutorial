@@ -142,6 +142,8 @@ stock = {
 }
 
 print(sorted(zip(stock.values(), stock.keys()), key=operator.itemgetter(0), reverse=False))   #zip()把keys和values互换位置
+print(sorted(stocks.items(), key=lambda a: a[1]))                                             #位置不互换，选取字典第二列排序
+print(sorted(stocks.items(), key=operator.itemgetter(1)))
 
 10. # heapq， 获取数组的最小最大值
 import heapq
