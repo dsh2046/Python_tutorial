@@ -160,3 +160,28 @@ stocks = [
     {'Name': 'SSSSS', 'Price': '90'}
 ]
 print(heapq.nsmallest(2, stocks, key=lambda a: a['Price']))  #多属性时使用key=lambda， 获取具体指定属性的最小最大值
+
+11. #读取CSV文件并存入数组
+import csv
+class csvLibrary(object):
+    def read_csv_file(self, filename):
+        data = []
+        with open(filename) as csvfile:            # with open as 自动处理错误
+            reader = csv.reader(csvfile)
+            for row in reader:
+                data.append(row)
+        return data
+    
+12. #提取文章高频词
+from collections import Counter
+
+text = " Alan Langdon and his daughter Que were missing for almost a month CREDIT: AP" \
+       "A New Zealand man and his six-year-old daughter who disappeared on a sailing trip" \
+       " have been found in Australia after a month at sea.Their intended destination was " \
+       "the Bay of Islands, about 400 miles around the coast on the other side of the island. " \
+       "But a rudder broke and they ran into bad weather, forcing them off course."
+
+words = text.split()
+counter = Counter(words)
+top_3 = counter.most_common(3)
+print(top_3)
