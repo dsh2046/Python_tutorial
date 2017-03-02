@@ -185,3 +185,15 @@ words = text.split()
 counter = Counter(words)
 top_3 = counter.most_common(3)
 print(top_3)
+
+
+13. #最短匹配模式
+import re
+
+datepat = re.compile(r'"(.*?)"')
+text = 'Today is 11/27/2012. "PyCon." starts "TODAY" is 3/13/2013.'
+print datepat.findall(text)
+# ['PyCon.', 'TODAY']
+
+
+14. 
