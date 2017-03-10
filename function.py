@@ -39,7 +39,7 @@ print ','.join((str(x) for x in l))
 #输出 2,3,4,5,6
 
 
-5.减少可调用对象的参数个数
+5.减少函数的参数个数
 #比较两点距离并排序  #妙用Partial函数  # 利用 partial() 函数来固定某些参数值
 
 import math
