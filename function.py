@@ -57,3 +57,23 @@ def dis(p):                          # 此处可用partial()代替
 points.sort(key=dis)                 # points.sort(key=partial(distance, pt))
 print points                         # 结果相等
 # [(3, 4), (1, 2), (5, 6), (7, 8)]   # 另用lambda函数也可实现： points.sort(key=lambda x: distance(pt,x))
+
+
+6.闭包，装饰器
+def makebold(fn):
+    def wrapped():
+        return "<b>" + fn() + "</b>"
+    return wrapped
+
+def makeitalic(fn):
+    def wrapped():
+        return "<i>" + fn() + "</i>"
+    return wrapped
+
+@makebold
+@makeitalic
+def hello():
+    return "hello world"
+
+print hello()
+#输出 <b><i>hello world</i></b>
