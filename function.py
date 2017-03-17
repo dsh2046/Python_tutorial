@@ -102,7 +102,7 @@ def abc(x, y):
 print(abc(12,34))
 
 
-8.使用装饰器拓充类的功能
+8.使用装饰器拓充类的功能:  类的装饰器
 def log_getattribute(cls):
     orig_getattribute = cls.__getattribute__
 
