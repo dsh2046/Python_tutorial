@@ -2,11 +2,19 @@
 # -*- coding: utf-8 -*-
 1. 基础用法
 # Function decorator
-def decorator(original_func):
+from functools import wraps
+def deco(oc):
+     @wraps(oc)
      def wrapper(*args, **kwargs):
-          print("Wrapper content")
-          original_func(*args, **kwargs)
-     return wrapper
+          #do whatever u want;
+          return oc(*args, **kwargs)
+     return wrapper 
+
+@deco
+def oc(*args, **kwargs):
+     #do whatever u want with oc function;
+
+oc()
 
 # Class decorator
 class decorator_class(object):
@@ -53,3 +61,30 @@ def test(*arg, **kwargs):
      print(arg, kwargs)
 
 test(12,34)
+
+3. Nonlocal关键字
+#Python3
+def outer():
+        x = 1
+        def inner():
+            nonlocal x
+            x = 2
+            print("inner:", x)
+        inner()
+        print("outer:", x)
+  
+ >>> outer()
+ inner: 2
+ outer: 2
+     
+ #Python2
+ def outer():
+        x = [1]
+        def inner():
+            x[0] += 1 #修改x[0]保存的值
+            print("inner:", x[0])
+        inner()
+        print("outer:", x[0])
+ >>> outer()
+ inner: 2
+ outer: 2
