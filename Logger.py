@@ -10,7 +10,7 @@ file_handler.setLevel(logging.ERROR)               ＃　设置日志文件等�
 file_handler.setFormatter(formatter)　　　　　　　　　＃　设置日志文件格式
 
 stream_handler = logging.StreamHandler()   ＃ 输出到屏幕上显示
-stream_handler.setFormatter(formatter)     ＃　出错等级信息均会输出到屏幕
+stream_handler.setFormatter(formatter)     ＃　注意：　出错等级信息均会输出到屏幕或文件中！！不管什么等级
 
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
