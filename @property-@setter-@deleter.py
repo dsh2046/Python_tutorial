@@ -25,7 +25,7 @@ class Employee:
 
 emp_1 = Employee('John', 'Smith')
 
-print(emp_1.fullname)          @pew ＃直接提取full name，　不需括号   
+print(emp_1.fullname)           ＃直接提取full name，　不需括号   
 
 emp_1.fullname = 'Samuel Deng'  ＃设置emp_1的全名，同时也更新 fname, lname
 
