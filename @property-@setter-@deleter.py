@@ -3,7 +3,7 @@ class Employee:
     def __init__(self, first, last):
         self.first = first
         self.last = last
-  @property                      ＃可像属性一样直接调用，emp_1.email
+
     @property                      ＃可像属性一样直接调用，emp_1.email
     def email(self):
         return '{}.{}@email.com'.format(self.first, self.last)
