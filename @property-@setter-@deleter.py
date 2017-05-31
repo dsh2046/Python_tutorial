@@ -23,7 +23,7 @@ class Employee:
         self.fname = None
         self.lname = None
 
-
+@property qwqweweqwerqweweqw
 emp_1 = Employee('John', 'Smith')
 
 print(emp_1.fullname)          ＃直接提取full name，　不需括号   
