@@ -1,5 +1,5 @@
 class Employee:
-＃可像属性一样直接调用，emp_1.email
+
     def __init__(self, first, last):
         self.first = first
         self.last = last
