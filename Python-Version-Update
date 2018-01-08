@@ -1,4 +1,11 @@
+Python 3
 $ sudo apt-get install software-properties-common
 $ sudo add-apt-repository ppa:deadsnakes/ppa
 $ sudo apt-get update
 $ sudo apt-get install python3.6
+
+Python 2
+sudo add-apt-repository ppa:jonathonf/python-2.7
+sudo apt-get update
+sudo apt-get install python2.7
+python --version
